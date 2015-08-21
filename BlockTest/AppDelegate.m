@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-
+#import "ViewController.h"
+#import "WaterViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -15,7 +16,15 @@
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    ViewController *root = [[ViewController alloc] init] ;
+    UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:root] ;
+    self.window.rootViewController = navi ;//[[WaterViewController alloc] init] ;
+    
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible] ;
+    
     // Override point for customization after application launch.
     return YES;
 }
